@@ -1,0 +1,4 @@
+# xml 1.0 declaration utf-8
+snippet <?xml
+	<?xml version="1.0" encoding="utf-8"?>
+
