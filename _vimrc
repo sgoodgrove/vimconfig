@@ -35,9 +35,42 @@ nmap <C-x>l :bn<cr>
 " SQL Specific
 let g:sql_type_default = "sqlserver"
 
+function! ToSqlInList() range
+	for linenum in range(a:firstline, a:lastline)
+		let curr_line = getline(linenum)
+
+		let replacement = substitute(curr_line, '^', '''', '')
+
+		if linenum < a:lastline
+			let replacement = substitute(replacement, '$', ''',', '')
+		else
+			let replacement = substitute(replacement, '$', '''', '')
+		endif
+
+		call setline(linenum, replacement)
+	endfor
+endfunction
+
+function! ToSqlSelectList() range
+	for linenum in range(a:firstline, a:lastline)
+		let curr_line = getline(linenum)
+
+		let replacement = substitute(curr_line, ',\s*', ''', ''', 'g')
+		let replacement = substitute(replacement, '^', 'SELECT ''', '')
+		let replacement = substitute(replacement, '$', '''', '')
+
+		if linenum < a:lastline
+			let replacement = substitute(replacement, '$', ' UNION ALL', '')
+		endif
+
+		call setline(linenum, replacement)
+	endfor
+endfunction
+
 " System
 set directory=$APPDATA/Vim/directory
 
 set shiftwidth=4
 
 set spelllang=en_gb
+
