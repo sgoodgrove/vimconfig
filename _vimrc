@@ -22,6 +22,10 @@ colorscheme jellybeans
 " Pathogen
 execute pathogen#infect($APPDATA . '/Vim/bundle/{}')
 
+" Vimtodo
+let g:todo_states =[['TODO(t)', '|', 'DONE(d)', 'CANCELLED(c)'],
+	\['WAITING(w)', 'HOLD(h)', 'INPROGRESS(i)', 'SOMEDAY(s)', 'CLOSED(l)']]
+
 " Key mappings
 
 nmap <Leader>nt :NERDTreeToggle $UserProfile/Desktop<cr>
