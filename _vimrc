@@ -78,3 +78,4 @@ set shiftwidth=4
 
 set spelllang=en_gb
 
+let g:multi_cursor_next_key="<F6>"
