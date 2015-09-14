@@ -1,9 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='C:/Users/stevego/Desktop/Git/Career/Challenges/XLN/iRobot/Robot'
-let g:netrw_dirhist_2='C:/Users/stevego/Desktop/Git/Career/Challenges/XLN/iRobot/Robot/CoordinateTransforms'
-let g:netrw_dirhist_3='C:\TeamProjects\Cloud - WebIntranet\src\Orchard.Web\App_Data\Logs'
-let g:netrw_dirhist_4='C:/TeamProjects/Cloud - WebIntranet/src/Orchard.Web/App_Data/Logs'
-let g:netrw_dirhist_5='C:\TeamProjects\Cloud - WebIntranet\src\Orchard.Web\App_Data\Logs'
-let g:netrw_dirhist_6='C:/TeamProjects/Cloud - WebIntranet/src/Orchard.Web/App_Data/Logs'
-let g:netrw_dirhist_7='C:\TeamProjects\Cloud - WebIntranet\src\Orchard.Web\App_Data\Logs'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='C:/TeamProjects'
+let g:netrw_dirhist_2='C:/TeamProjects/Common'
+let g:netrw_dirhist_3='C:/TeamProjects/Common/DMBC.Configuration'

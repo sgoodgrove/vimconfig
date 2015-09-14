@@ -118,3 +118,6 @@ hi User1 guifg=gray80 guibg=gray10 term=bold gui=NONE
 hi User2 guifg=white guibg=gray30 term=bold gui=NONE
 hi User3 guifg=black guibg=white term=bold gui=bold
 hi User4 guifg=gray80 guibg=gray10 term=italic gui=italic
+
+" This line is to enable supertab and snipMate to work together
+let g:SuperTabDefaultCompletionType = "context"
