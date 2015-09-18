@@ -2,7 +2,11 @@
 " Appearance
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme jellybeans
-set gfn=Droid_Sans_Mono:h9:cANSI
+if has("win32")
+	set gfn=Droid_Sans_Mono:h9:cANSI
+else
+	set gfn="Droid Sans Mono 10"
+endif
 
 " Other colorschemes
 " koehler molokai vividchalk
@@ -22,7 +26,6 @@ if has("win32")
 
 	let &directory=s:swapPath
 
-	set gfn="Droid Sans Mono 10"
 endif
 
 set spelllang=en_gb
