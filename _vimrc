@@ -1,45 +1,83 @@
-" Themeing
-" set gfn=DejaVu_Sans_Mono:h8:cANSI
-set gfn=Droid_Sans_Mono:h10:cANSI
-" colorscheme koehler
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Appearance
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme jellybeans
-" colorscheme molokai
-" colorscheme vividchalk
+set gfn=Droid_Sans_Mono:h9:cANSI
 
+" Other colorschemes
+" koehler molokai vividchalk
+" Other fonts
+" DejaVu_Sans_Mono:h8:cANSI
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" System settings and win32 specific
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if has("win32")
+	let s:swapPath = expand("$APPDATA/Vim/swap")
+
+	if !isdirectory(s:swapPath)
+		call mkdir(s:swapPath)
+	endif
+
+	let &directory=s:swapPath
+
+	set gfn="Droid Sans Mono 10"
+endif
+
+set spelllang=en_gb
+
+syntax on
+filetype plugin indent on
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Gui
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 :set lines=40 columns=120
-:set guioptions-=T  "remove toolbar
+":set guioptions-=T  "remove toolbar
 ":set guioptions-=m  "remove menu bar
 ":set guioptions-=r  "remove right-hand scroll bar
+:set guioptions=
 :let g:colorizer_auto_filetype='css,html'
 
 :set colorcolumn=81
-" :set listchars=tab:??,trail:?,nbsp:~
-" :set list
+:set cursorline
 :set number
 :set showmatch
+
 :set shiftwidth=4
 :set tabstop=4
-:set cursorline
+:set tw=0
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Pathogen
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 execute pathogen#infect()
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vimtodo
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " let g:todo_states =[['TODO(t)', '|', 'DONE(d)', 'CANCELLED(c)'],
 "	\['WAITING(w)', 'HOLD(h)', 'INPROGRESS(i)', 'SOMEDAY(s)', 'CLOSED(l)']]
+let g:todo_taskurl="https://doncaster-mbc.atlassian.net/browse/WEB-%s"
+let g:todo_browser="C:/Program Files (x86)/Mozilla Firefox/firefox.exe"
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key mappings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 nmap <Leader>nt :NERDTreeToggle $UserProfile/Desktop<cr>
-
 nmap <F8> :TagbarToggle<cr>
 nmap <F12> :noh<cr>
-
 nmap <C-x><C-h> :bp<cr>
 nmap <C-x><C-l> :bn<cr>
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SQL Specific
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:sql_type_default = "sqlserver"
 
 function! ToSqlInList() range
@@ -74,18 +112,9 @@ function! ToSqlSelectList() range
 	endfor
 endfunction
 
-" System
-set directory=$APPDATA/Vim/directory
-
-set shiftwidth=4
-
-set spelllang=en_gb
-
-let g:multi_cursor_next_key="<F6>"
-
-syntax on
-filetype plugin indent on
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Misc functions
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! Scratch()
 	" as taken from http://vim.wikia.com/wiki/Vim_buffer_FAQ
 	setlocal buftype=nofile
@@ -93,8 +122,11 @@ function! Scratch()
 	setlocal noswapfile
 endfunction
 
+let g:multi_cursor_next_key="<F6>"
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " status line definition
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set laststatus=2
 " jamessan's
 set statusline=   " clear the statusline for when vimrc is reloaded set statusline+=%-3.3n\                      " buffer number
@@ -119,5 +151,8 @@ hi User2 guifg=white guibg=gray30 term=bold gui=NONE
 hi User3 guifg=black guibg=white term=bold gui=bold
 hi User4 guifg=gray80 guibg=gray10 term=italic gui=italic
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Supertab
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " This line is to enable supertab and snipMate to work together
 let g:SuperTabDefaultCompletionType = "context"
