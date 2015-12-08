@@ -1,10 +1,10 @@
 " Plugin:       Highlight Colornames and Values
 " Maintainer:   Christian Brabandt <cb@256bit.org>
 " URL:          http://www.github.com/chrisbra/color_highlight
-" Last Change: Wed, 14 Aug 2013 22:13:54 +0200
+" Last Change: Thu, 15 Jan 2015 21:49:17 +0100
 " Licence:      Vim License (see :h License)
-" Version:      0.9
-" GetLatestVimScripts: 3963 9 :AutoInstall: Colorizer.vim
+" Version:      0.11
+" GetLatestVimScripts: 3963 11 :AutoInstall: Colorizer.vim
 "
 " This plugin was inspired by the css_color.vim plugin from Nikolaus Hofer.
 " Changes made: - make terminal colors work more reliably and with all
@@ -50,12 +50,28 @@ xnoremap <Plug>ColorContrast    :<C-U>ColorContrast<CR>
 nnoremap <Plug>ColorFgBg        :<C-U>ColorSwapFgBg<CR>
 xnoremap <Plug>ColorFgBg        :<C-U>ColorSwapFgBg<CR>
 
-nmap <silent> <Leader>cC <Plug>Colorizer
-xmap <silent> <Leader>cC <Plug>Colorizer
-nmap <silent> <Leader>cT <Plug>ColorContrast
-xmap <silent> <Leader>cT <Plug>ColorContrast
-nmap <silent> <Leader>cF <Plug>ColorFgBg
-xmap <silent> <Leader>cF <Plug>ColorFgBg
+if get(g:, 'colorizer_auto_map', 0)
+    " only map, if the mapped keys are not yet taken by a different plugin
+    " and the user hasn't mapped the function to different keys
+    if empty(maparg('<Leader>cC', 'n')) && empty(hasmapto('<Plug>Colorizer', 'n'))
+        nmap <silent> <Leader>cC <Plug>Colorizer
+    endif
+    if empty(maparg('<Leader>cC', 'x')) && empty(hasmapto('<Plug>Colorizer', 'x'))
+        xmap <silent> <Leader>cC <Plug>Colorizer
+    endif
+    if empty(maparg('<Leader>cT', 'n')) && empty(hasmapto('<Plug>ColorContrast', 'n'))
+        nmap <silent> <Leader>cT <Plug>ColorContrast
+    endif
+    if empty(maparg('<Leader>cT', 'x')) && empty(hasmapto('<Plug>ColorContrast', 'n'))
+        xmap <silent> <Leader>cT <Plug>ColorContrast
+    endif
+    if empty(maparg('<Leader>cF', 'n')) && empty(hasmapto('<Plug>ColorFgBg', 'n'))
+        nmap <silent> <Leader>cF <Plug>ColorFgBg
+    endif
+    if empty(maparg('<Leader>cF', 'x')) && empty(hasmapto('<Plug>ColorFgBg', 'x'))
+        xmap <silent> <Leader>cF <Plug>ColorFgBg
+    endif
+endif
 
 " Enable Autocommands "{{{1
 if exists("g:colorizer_auto_color")
