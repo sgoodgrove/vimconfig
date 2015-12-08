@@ -1,17 +1,20 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Appearance
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme jellybeans
+colorscheme molokai
+
 if has("win32")
-	set gfn=Droid_Sans_Mono:h9:cANSI
+	set gfn=Droid_Sans_Mono:h10:cANSI
+	set gfn=Fantasque_Sans_Mono:h11
 else
 	set gfn="Droid Sans Mono 10"
 endif
 
 " Other colorschemes
-" koehler molokai vividchalk
+" jellybeans koehler vividchalk
 " Other fonts
 " DejaVu_Sans_Mono:h8:cANSI
+" Fantasque_Sans_Mono:h11
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -53,6 +56,13 @@ filetype plugin indent on
 :set tabstop=4
 :set tw=0
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Search
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set fdo-=search
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Pathogen
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -67,6 +77,12 @@ execute pathogen#infect()
 let g:todo_taskurl="https://doncaster-mbc.atlassian.net/browse/WEB-%s"
 let g:todo_browser="C:/Program Files (x86)/Mozilla Firefox/firefox.exe"
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Tabularize
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" :let g:tabular_loaded = 1
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -76,7 +92,9 @@ nmap <F8> :TagbarToggle<cr>
 nmap <F12> :noh<cr>
 nmap <C-x><C-h> :bp<cr>
 nmap <C-x><C-l> :bn<cr>
-
+"
+" Open markdown files with Chrome.
+autocmd BufEnter *.md exe 'noremap <F5> :!start C:\Users\tomas\AppData\Local\Google\Chrome\Application\chrome.exe %:p<CR>'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SQL Specific
@@ -132,11 +150,14 @@ let g:multi_cursor_next_key="<F6>"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set laststatus=2
 " jamessan's
-set statusline=   " clear the statusline for when vimrc is reloaded set statusline+=%-3.3n\                      " buffer number
+set statusline=   " clear the statusline for when vimrc is reloaded 
+set statusline+=%-3.3n\                      " buffer number
 set statusline+=%2*
 set statusline+=%f\                          " file name
 set statusline+=%3*
 set statusline+=%h%m%r%w                     " flags
+" set statusline+=%5*
+" set statusline+=\{%n\}
 set statusline+=%4*
 set statusline+=[%{strlen(&ft)?&ft:'none'},  " filetype
 set statusline+=%{strlen(&fenc)?&fenc:&enc}, " encoding
@@ -153,9 +174,22 @@ hi User1 guifg=gray80 guibg=gray10 term=bold gui=NONE
 hi User2 guifg=white guibg=gray30 term=bold gui=NONE
 hi User3 guifg=black guibg=white term=bold gui=bold
 hi User4 guifg=gray80 guibg=gray10 term=italic gui=italic
+" hi User5 guifg=black guibg=gray30 term=bold gui=bold
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Supertab
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " This line is to enable supertab and snipMate to work together
 let g:SuperTabDefaultCompletionType = "context"
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Golden Ratio
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:loaded_golden_ratio = 1
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Change Directory
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+cd C:\TeamProjects\
