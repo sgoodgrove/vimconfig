@@ -43,3 +43,18 @@
 [submodule "vimfiles/bundle/vimwiki"]
 	path = vimfiles/bundle/vimwiki
 	url = https://github.com/vimwiki/vimwiki.git
+[submodule "vimfiles/bundle/Colorizer"]
+	path = vimfiles/bundle/Colorizer
+	url = https://github.com/chrisbra/Colorizer.git
+[submodule "vimfiles/bundle/nerdtree"]
+	path = vimfiles/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "vimfiles/bundle/vim-ps1"]
+	path = vimfiles/bundle/vim-ps1
+	url = https://github.com/PProvost/vim-ps1.git
+[submodule "vimfiles/bundle/vim-surround"]
+	path = vimfiles/bundle/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule "vimfiles/bundle/TagBar"]
+	path = vimfiles/bundle/TagBar
+	url = https://github.com/majutsushi/tagbar.git
