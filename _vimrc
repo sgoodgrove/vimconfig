@@ -40,11 +40,14 @@ filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Gui
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if has("gui")
 :set lines=40 columns=120
 ":set guioptions-=T  "remove toolbar
 ":set guioptions-=m  "remove menu bar
 ":set guioptions-=r  "remove right-hand scroll bar
 :set guioptions=
+endif
+
 :let g:colorizer_auto_filetype='css,html'
 
 :set colorcolumn=81
