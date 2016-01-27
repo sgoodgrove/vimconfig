@@ -196,3 +196,13 @@ let g:loaded_golden_ratio = 1
 " Change Directory
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 cd C:\TeamProjects\
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Key mappings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" FuzzyFinder
+nmap <leader>F :FufFile<cr>
+nmap <leader>D :FufDir<cr>
+nmap <leader>B :FufBuffer<cr>
+
