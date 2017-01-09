@@ -24,7 +24,7 @@ if has("win32")
 	let s:swapPath = expand("$APPDATA/Vim/swap")
 
 	if !isdirectory(s:swapPath)
-		call mkdir(s:swapPath)
+		call mkdir(s:swapPath, "p")
 	endif
 
 	let &directory=s:swapPath
