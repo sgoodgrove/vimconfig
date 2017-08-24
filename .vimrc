@@ -1,6 +1,5 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Appearance
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Appearance {{{
+
 colorscheme molokai
 
 if has("win32")
@@ -17,9 +16,9 @@ endif
 " Fantasque_Sans_Mono:h11
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" System settings and win32 specific
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" System settings and win32 specific {{{
+
 if has("win32")
 	let s:swapPath = expand("$APPDATA/Vim/swap")
 
@@ -36,10 +35,9 @@ set spelllang=en_gb
 syntax on
 filetype plugin indent on
 
+" }}}
+" Gui {{{
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Gui
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has("gui")
 :set lines=40 columns=120
 ":set guioptions-=T  "remove toolbar
@@ -50,45 +48,37 @@ endif
 
 :let g:colorizer_auto_filetype='css,html'
 
-:set colorcolumn=81
+:set colorcolumn=81,121
 :set cursorline
 :set number
-:set showmatch
+:set showmatch " show matching braces
 
 :set shiftwidth=4
 :set tabstop=4
 :set tw=0
+:set expandtab
+:set lazyredraw " don't redraw for macros and such
 
+set modelines=1
+" }}}
+" Search {{{
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Search
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set fdo-=search
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Pathogen
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" Pathogen {{{
 execute pathogen#infect()
+" }}}
+" Vimtodo {{{
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Vimtodo
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " let g:todo_states =[['TODO(t)', '|', 'DONE(d)', 'CANCELLED(c)'],
 "	\['WAITING(w)', 'HOLD(h)', 'INPROGRESS(i)', 'SOMEDAY(s)', 'CLOSED(l)']]
 let g:todo_taskurl="https://doncaster-mbc.atlassian.net/browse/WEB-%s"
 let g:todo_browser="C:/Program Files (x86)/Mozilla Firefox/firefox.exe"
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Tabularize
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" Tabularize {{{
 " :let g:tabular_loaded = 1
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Key mappings
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" Key mappings {{{
 
 nmap <Leader>nt :NERDTreeToggle $UserProfile/Desktop<cr>
 nmap <F8> :TagbarToggle<cr>
@@ -99,9 +89,8 @@ nmap <C-x><C-l> :bn<cr>
 " Open markdown files with Chrome.
 autocmd BufEnter *.md exe 'noremap <F5> :!start C:\Users\tomas\AppData\Local\Google\Chrome\Application\chrome.exe %:p<CR>'
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" SQL Specific
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" SQL specific functions {{{
 let g:sql_type_default = "sqlserver"
 
 function! ToSqlInList() range
@@ -135,10 +124,8 @@ function! ToSqlSelectList() range
 		call setline(linenum, replacement)
 	endfor
 endfunction
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Misc functions
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"}}}
+" Misc functions {{{
 function! Scratch()
 	" as taken from http://vim.wikia.com/wiki/Vim_buffer_FAQ
 	setlocal buftype=nofile
@@ -147,10 +134,8 @@ function! Scratch()
 endfunction
 
 let g:multi_cursor_next_key="<F6>"
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" status line definition
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"}}}
+" Status line definition {{{
 set laststatus=2
 " jamessan's
 set statusline=   " clear the statusline for when vimrc is reloaded 
@@ -173,31 +158,38 @@ set statusline+=%-14.(%l,%c%V%)
 set statusline+=%1*
 set statusline+=\ %<%P        " offset
 
+" Status line colours 
 hi User1 guifg=gray80 guibg=gray10 term=bold gui=NONE
 hi User2 guifg=white guibg=gray30 term=bold gui=NONE
 hi User3 guifg=black guibg=white term=bold gui=bold
 hi User4 guifg=gray80 guibg=gray10 term=italic gui=italic
 " hi User5 guifg=black guibg=gray30 term=bold gui=bold
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Supertab
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+" }}}
+" Supertab {{{
 " This line is to enable supertab and snipMate to work together
 let g:SuperTabDefaultCompletionType = "context"
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Golden Ratio
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"}}}j
+" Golden Ratio {{{
 let g:loaded_golden_ratio = 1
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Key mappings
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" Key mappings {{{
 
 " FuzzyFinder
 nmap <leader>F :FufFile<cr>
 nmap <leader>D :FufDir<cr>
 nmap <leader>B :FufBuffer<cr>
+nmap <leader>M :FufBookmarkDir<cr>
+
+let g:tagbar_type_cake = {
+    \ 'ctagstype' : 'cakebuild',
+    \ 'kinds' : [
+        \ 't:Task'
+    \ ]
+\ }
+" }}}
+
+" vim:foldmethod=marker:foldlevel=0
 
