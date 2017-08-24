@@ -133,7 +133,6 @@ function! Scratch()
 	setlocal noswapfile
 endfunction
 
-let g:multi_cursor_next_key="<F6>"
 "}}}
 " Status line definition {{{
 set laststatus=2
@@ -192,4 +191,3 @@ let g:tagbar_type_cake = {
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
-
