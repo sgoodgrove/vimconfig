@@ -192,4 +192,7 @@ let g:tagbar_type_cake = {
     \ ]
 \ }
 " }}}
-
+" Test {{{
+let g:test#javascript#mocha#file_pattern = '\v/tests?/.*\.(js|jsx|coffee)$'
+let g:test#runner_commands = ['Mocha']
+" }}}
