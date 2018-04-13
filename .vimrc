@@ -1,3 +1,4 @@
+" vim:foldmethod=marker:foldlevel=0
 " Appearance {{{
 
 colorscheme molokai
@@ -59,6 +60,7 @@ endif
 :set expandtab
 :set lazyredraw " don't redraw for macros and such
 
+set modeline
 set modelines=1
 " }}}
 " Search {{{
@@ -189,5 +191,7 @@ let g:tagbar_type_cake = {
     \ ]
 \ }
 " }}}
-
-" vim:foldmethod=marker:foldlevel=0
+" Test {{{
+let g:test#javascript#mocha#file_pattern = '\v/tests?/.*\.(js|jsx|coffee)$'
+let g:test#runner_commands = ['Mocha']
+" }}}
