@@ -1,4 +1,3 @@
-" vim:foldmethod=marker:foldlevel=0
 " Appearance {{{
 
 colorscheme molokai
@@ -57,10 +56,9 @@ endif
 :set shiftwidth=4
 :set tabstop=4
 :set tw=0
-:set expandtab
+:set expandtab " use spaces instead of tabs
 :set lazyredraw " don't redraw for macros and such
 
-set modeline
 set modelines=1
 " }}}
 " Search {{{
@@ -77,6 +75,11 @@ execute pathogen#infect()
 let g:todo_taskurl="https://doncaster-mbc.atlassian.net/browse/WEB-%s"
 let g:todo_browser="C:/Program Files (x86)/Mozilla Firefox/firefox.exe"
 " }}}
+" Vimwiki {{{
+  let g:vimwiki_list = [{'path': '~/vimwiki/',
+                       \ 'syntax': 'markdown', 'ext': '.md'}]
+  let g:vimwiki_folding = 'expr'
+" }}}
 " Tabularize {{{
 " :let g:tabular_loaded = 1
 " }}}
@@ -87,7 +90,7 @@ nmap <F8> :TagbarToggle<cr>
 nmap <F12> :noh<cr>
 nmap <C-x><C-h> :bp<cr>
 nmap <C-x><C-l> :bn<cr>
-"
+
 " Open markdown files with Chrome.
 autocmd BufEnter *.md exe 'noremap <F5> :!start C:\Users\tomas\AppData\Local\Google\Chrome\Application\chrome.exe %:p<CR>'
 
@@ -191,7 +194,5 @@ let g:tagbar_type_cake = {
     \ ]
 \ }
 " }}}
-" Test {{{
-let g:test#javascript#mocha#file_pattern = '\v/tests?/.*\.(js|jsx|coffee)$'
-let g:test#runner_commands = ['Mocha']
-" }}}
+
+" vim:foldmethod=marker:foldlevel=0
