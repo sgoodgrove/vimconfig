@@ -6,7 +6,7 @@ if has("win32")
 	set gfn=Droid_Sans_Mono:h10:cANSI
 	set gfn=Fantasque_Sans_Mono:h11
 else
-	set gfn="Droid Sans Mono 10"
+	set gfn="DejaVu Sans Mono 10"
 endif
 
 " Other colorschemes
