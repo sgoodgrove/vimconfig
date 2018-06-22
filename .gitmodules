@@ -67,3 +67,6 @@
 [submodule "vimfiles/bundle/vim-test"]
 	path = vimfiles/bundle/vim-test
 	url = https://github.com/janko-m/vim-test.git
+[submodule "vimfiles/bundle/typescript-vim"]
+	path = vimfiles/bundle/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git
