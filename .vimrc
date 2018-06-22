@@ -35,6 +35,8 @@ set spelllang=en_gb
 syntax on
 filetype plugin indent on
 
+set t_Co=256
+
 " }}}
 " Gui {{{
 
