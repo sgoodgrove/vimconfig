@@ -19,9 +19,11 @@ call plug#begin('~/.local/share/nvim/plugged')
 " TypeScript
 " Plug 'HerringtonDarkholme/yats.vim'
 " Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
-Plug 'quramy/tsuquyomi'
+" Plug 'quramy/tsuquyomi'
 Plug 'leafgarland/typescript-vim'
 Plug 'jason0x43/vim-js-indent'
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Color schemes
 Plug 'nanotech/jellybeans.vim'
@@ -71,16 +73,10 @@ Plug 'OmniSharp/omnisharp-vim'
 " SQL syntax
 Plug 'shmup/vim-sql-syntax'
 
-" For async completion
-Plug 'Shougo/deoplete.nvim'
-
 " For Denite features
 Plug 'Shougo/denite.nvim'
 
 call plug#end()
-" }}}
-" {{{ deoplete
-let g:deoplete#enable_at_startup=1
 " }}}
 
 " Set color scheme
