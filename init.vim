@@ -1,9 +1,6 @@
 " NeoVim configuration file by Steven Goodgrove
 
 " {{{ global Vim-native settings
-"
-" Set spelling language
-:set spelllang=en_gb
 
 " {{{ Windows specific settings
 if has("win32")
@@ -12,8 +9,19 @@ if has("win32")
 endif
 " }}}
 
+" Set spelling language
+:set spelllang=en_gb
+
 " Enable relative line numbers
 :set rnu
+
+" Set color scheme
+colorscheme koehler
+"
+" Allows for file-specific settings
+" :help modeline
+set modeline
+
 " }}}
 " {{{ vim-plug
 call plug#begin('~/.local/share/nvim/plugged')
@@ -81,7 +89,5 @@ Plug 'Shougo/denite.nvim'
 call plug#end()
 " }}}
 
-" Set color scheme
-colorscheme jellybeans
 
 " vim:foldmethod=marker:foldlevel=0
