@@ -5,10 +5,12 @@
 " Set spelling language
 :set spelllang=en_gb
 
-" Set python 3 location
-let g:python3_host_prog = 'C:\Users\steven.goodgrove\AppData\Local\Programs\Python\Python37-32\python.exe'
-
-
+" {{{ Windows specific settings
+if has("win32")
+	" Set python 3 location
+	let g:python3_host_prog = 'C:\Users\steven.goodgrove\AppData\Local\Programs\Python\Python37-32\python.exe'
+endif
+" }}}
 
 " Enable relative line numbers
 :set rnu
@@ -25,7 +27,7 @@ Plug 'jason0x43/vim-js-indent'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" Color schemes
+" Colour schemes
 Plug 'nanotech/jellybeans.vim'
 Plug 'Rigellute/shades-of-purple.vim'
 
@@ -44,7 +46,7 @@ Plug 'chrisbra/Colorizer'
 " Syntastic
 Plug 'shmup/vim-sql-syntax'
 
-" Automatic closing of quotes, parenthesis, brackets etc
+" Automatic closing of quotes, parenthesis, brackets etc.
 Plug 'Raimondi/delimitMate'
 
 " Tagbar
