@@ -79,11 +79,16 @@ Plug 'plasticboy/vim-markdown'
 
 " Surround
 Plug 'tpope/vim-surround'
+
 " F#
-Plug 'kongo2002/fsharp-vim'
+" Plug 'kongo2002/fsharp-vim'
+Plug 'fsharp/vim-fsharp'
 
 " extended % matching (HTML)
 Plug 'tmhedberg/matchit'
+
+" HTML5
+Plug 'othree/html5.vim'
 
 " NERDTree
 Plug 'scrooloose/nerdtree'
@@ -96,6 +101,23 @@ Plug 'shmup/vim-sql-syntax'
 
 " For Denite features
 Plug 'Shougo/denite.nvim'
+
+" JavaScript
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+
+" Svelte
+Plug 'evanleck/vim-svelte'
+
+" Vue
+Plug 'posva/vim-vue'
+
+" Clojure
+Plug 'guns/vim-clojure-static'
+
+" Docker
+Plug 'ekalinin/Dockerfile.vim'
+
 
 call plug#end()
 " }}}
