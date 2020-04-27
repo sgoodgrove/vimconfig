@@ -17,7 +17,12 @@ endif
 
 " Set color scheme
 colorscheme koehler
-"
+
+" Set font
+if (has("win32"))
+    :set gfn=Fantasque_Sans_Mono:h12
+endif
+
 " Allows for file-specific settings
 " :help modeline
 set modeline
