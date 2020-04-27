@@ -35,7 +35,12 @@ set modeline
 
 " }}}
 " {{{ vim-plug
-call plug#begin('~/.local/share/nvim/plugged')
+
+if has("win32")
+    call plug#begin('~/vimfiles/plugged')
+else
+    call plug#begin('~/.vim/plugged')
+endif
 
 " TypeScript
 Plug 'HerringtonDarkholme/yats.vim'
