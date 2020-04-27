@@ -38,10 +38,10 @@ set modeline
 call plug#begin('~/.local/share/nvim/plugged')
 
 " TypeScript
-" Plug 'HerringtonDarkholme/yats.vim'
+Plug 'HerringtonDarkholme/yats.vim'
 " Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
-" Plug 'quramy/tsuquyomi'
-Plug 'leafgarland/typescript-vim'
+Plug 'quramy/tsuquyomi'
+" Plug 'leafgarland/typescript-vim'
 Plug 'jason0x43/vim-js-indent'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -118,9 +118,16 @@ Plug 'guns/vim-clojure-static'
 " Docker
 Plug 'ekalinin/Dockerfile.vim'
 
+" Not sure about this one. It's nice, but it might need patched fonts and I'm
+" not sure if I want to go to that trouble.
+" vim-airline
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+
 
 call plug#end()
 " }}}
 
+" In the editor execute :CocInstall coc-tsserver
 
 " vim:foldmethod=marker:foldlevel=0
