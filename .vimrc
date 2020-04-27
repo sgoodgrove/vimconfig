@@ -23,6 +23,14 @@ if (has("win32"))
     :set gfn=Fantasque_Sans_Mono:h12
 endif
 
+" Set GUI options
+if (has('gui'))
+    " Remove toolbar
+    :set guioptions-=T
+    " Remove menu
+    :set guioptions-=m
+endif
+
 " Allows for file-specific settings
 " :help modeline
 set modeline
