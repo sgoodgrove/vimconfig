@@ -12,8 +12,9 @@ endif
 " Set spelling language
 :set spelllang=en_gb
 
-" Enable relative line numbers
-:set rnu
+
+:set rnu " Enable relative line numbers
+:set number " Enable current line number
 
 " Set color scheme
 colorscheme koehler
@@ -44,7 +45,14 @@ set modeline
 :set tw=0
 :set expandtab " use spaces instead of tabs
 :set lazyredraw " don't redraw for macros and such
-"
+
+:set ruler " shows the line number/column number in the bottom right
+:set rulerformat=%50(B%n)\ %#Title#%t%*%m\ %=%#LineNr#%5l%*l,%3cc\ (%L)%)
+:set statusline=%<%f\ %y%h%#WarningMsg#%m%r%*%=%-14.(%4l,%c%)\ %L
+
+autocmd ColorScheme * highlight StatusLine guibg=#111111 guifg=white
+
+:set laststatus=2
 
 " }}}
 " {{{ vim-plug
