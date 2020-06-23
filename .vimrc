@@ -154,6 +154,11 @@ Plug 'ekalinin/Dockerfile.vim'
 call plug#end()
 " }}}
 
+" {{{ autocmd file type commands
+autocmd FileType markdown set conceallevel=2
+" }}}
+
+
 " In the editor execute :CocInstall coc-tsserver
 
 " vim:foldmethod=marker:foldlevel=0
