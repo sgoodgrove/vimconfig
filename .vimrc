@@ -102,6 +102,7 @@ Plug 'Shougo/unite.vim'
 
 " Markdown
 Plug 'plasticboy/vim-markdown'
+Plug 'jkramer/vim-checkbox'
 
 " Surround
 Plug 'tpope/vim-surround'
@@ -157,6 +158,12 @@ call plug#end()
 " {{{ autocmd file type commands
 autocmd FileType markdown set conceallevel=2
 " }}}
+"
+"{{{ Plugin preferences
+
+" vim-checkbox
+let g:checkbox_states = [' ', 'X']
+""}}}
 
 
 " In the editor execute :CocInstall coc-tsserver
