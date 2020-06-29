@@ -32,6 +32,11 @@ if (has('gui'))
     :set guioptions-=m
 endif
 
+if (has('gui_running'))
+    set columns=130
+    set lines=40
+endif
+
 " Allows for file-specific settings
 " :help modeline
 set modeline
