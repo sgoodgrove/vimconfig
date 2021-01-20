@@ -55,6 +55,8 @@ set modeline
 :set rulerformat=%50(B%n)\ %#Title#%t%*%m\ %=%#LineNr#%5l%*l,%3cc\ (%L)%)
 :set statusline=%<%f\ %y%h%#WarningMsg#%m%r%*%=%-14.(%4l,%c%)\ %L
 
+nmap <F7> :set spell!<cr>
+
 autocmd ColorScheme * highlight StatusLine guibg=#111111 guifg=white
 
 :set laststatus=2
@@ -149,6 +151,9 @@ Plug 'guns/vim-clojure-static'
 
 " Docker
 Plug 'ekalinin/Dockerfile.vim'
+
+" Vimwiki
+Plug 'vimwiki/vimwiki'
 
 " Not sure about this one. It's nice, but it might need patched fonts and I'm
 " not sure if I want to go to that trouble.
