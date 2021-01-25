@@ -55,7 +55,10 @@ set modeline
 :set rulerformat=%50(B%n)\ %#Title#%t%*%m\ %=%#LineNr#%5l%*l,%3cc\ (%L)%)
 :set statusline=%<%f\ %y%h%#WarningMsg#%m%r%*%=%-14.(%4l,%c%)\ %L
 
-nmap <F7> :set spell!<cr>
+" Toggle spell check.
+nmap <F7> :set spell!<cr> 
+" Run json through jq to prettify it.
+nmap <leader>jq :%!jq .<cr>
 
 autocmd ColorScheme * highlight StatusLine guibg=#111111 guifg=white
 
