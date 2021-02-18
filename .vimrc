@@ -9,6 +9,8 @@ if has("win32")
 endif
 " }}}
 
+:set listchars=tab:»»,trail:§
+:set list
 " Set spelling language
 :set spelllang=en_gb
 
