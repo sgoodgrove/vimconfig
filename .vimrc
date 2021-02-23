@@ -59,6 +59,7 @@ set modeline
 
 " Toggle spell check.
 nmap <F7> :set spell!<cr> 
+nmap <F8> :set list!<cr> 
 " Run json through jq to prettify it.
 nmap <leader>jq :%!jq .<cr>
 
