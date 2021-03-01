@@ -166,6 +166,8 @@ Plug 'vimwiki/vimwiki'
 " vim-airline
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
+"
+Plug 'dhruvasagar/vim-vinegar'
 
 
 call plug#end()
