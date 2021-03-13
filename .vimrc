@@ -9,7 +9,7 @@ if has("win32")
 endif
 " }}}
 
-:set listchars=tab:»»,trail:§
+:set listchars=tab:??,trail:?
 :set list
 " Set spelling language
 :set spelllang=en_gb
@@ -62,6 +62,7 @@ nmap <F7> :set spell!<cr>
 nmap <F8> :set list!<cr> 
 " Run json through jq to prettify it.
 nmap <leader>jq :%!jq .<cr>
+nmap <leader>nt :NERDTree<cr>
 
 autocmd ColorScheme * highlight StatusLine guibg=#111111 guifg=white
 
