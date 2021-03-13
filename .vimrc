@@ -103,7 +103,7 @@ Plug 'uptech/vim-slack-format'
 Plug 'chrisbra/Colorizer'
 
 " Syntastic
-Plug 'shmup/vim-sql-syntax'
+Plug 'vim-syntastic/syntastic'
 
 " Automatic closing of quotes, parenthesis, brackets etc.
 Plug 'Raimondi/delimitMate'
