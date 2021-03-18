@@ -186,6 +186,7 @@ let g:checkbox_states = [' ', 'X']
 
 
 " In the editor execute :CocInstall coc-tsserver
+let g:coc_global_extensions = ['coc-tsserver']
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
