@@ -135,6 +135,9 @@ Plug 'jkramer/vim-checkbox'
 " Surround
 Plug 'tpope/vim-surround'
 
+" Commentary
+Plug 'tpope/vim-commentary'
+
 " F#
 " Plug 'kongo2002/fsharp-vim'
 Plug 'fsharp/vim-fsharp'
