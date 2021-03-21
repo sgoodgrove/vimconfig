@@ -64,12 +64,15 @@ autocmd ColorScheme * highlight StatusLine guibg=#111111 guifg=white
 " }}}
 
 " {{{ Key bindings
+"
 " Toggle spell check.
-nmap <F7> :set spell!<cr> 
-nmap <F8> :set list!<cr> 
+nmap <F7> :set spell!<cr>
+" Toggle list
+nmap <F8> :set list!<cr>
 
 " Run json through jq to prettify it.
 nmap <leader>jq :%!jq .<cr>
+" Summon NERDTree
 nmap <leader>nt :NERDTree<cr>
 
 " Buffer management
@@ -77,6 +80,7 @@ nnoremap <C-k> :bprev<cr>
 nnoremap <C-j> :bnext<cr>
 nnoremap <leader>ka :%bd<cr>
 nnoremap <C-l> :ls<cr>:b<space>
+
 " }}}
 
 " {{{ vim-plug
