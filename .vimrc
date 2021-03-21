@@ -56,6 +56,14 @@ set modeline
 :set rulerformat=%50(B%n)\ %#Title#%t%*%m\ %=%#LineNr#%5l%*l,%3cc\ (%L)%)
 :set statusline=%<%f\ %y%h%#WarningMsg#%m%r%*%=%-14.(%4l,%c%)\ %L
 
+
+autocmd ColorScheme * highlight StatusLine guibg=#111111 guifg=white
+
+:set laststatus=2
+
+" }}}
+
+" {{{ Key bindings
 " Toggle spell check.
 nmap <F7> :set spell!<cr> 
 nmap <F8> :set list!<cr> 
@@ -69,12 +77,8 @@ nnoremap <C-k> :bprev<cr>
 nnoremap <C-j> :bnext<cr>
 nnoremap <leader>ka :%bd<cr>
 nnoremap <C-l> :ls<cr>:b<space>
-
-autocmd ColorScheme * highlight StatusLine guibg=#111111 guifg=white
-
-:set laststatus=2
-
 " }}}
+
 " {{{ vim-plug
 
 if has("win32")
@@ -188,20 +192,24 @@ autocmd FileType markdown set conceallevel=2
 
 " vim-checkbox
 let g:checkbox_states = [' ', 'X']
-""}}}
 
 
 " In the editor execute :CocInstall coc-tsserver
 let g:coc_global_extensions = ['coc-tsserver']
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_cs_checkers = ['code_checker']
+
+" }}}
+
+" {{{ Final configuration
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+" }}}
+
 
 " vim:foldmethod=marker:foldlevel=0
